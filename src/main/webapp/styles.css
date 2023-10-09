@@ -1,0 +1,55 @@
+
+body {
+            text-align: center; /* Center-align content horizontally */
+	    background-color: purple;
+        }
+
+        .container {
+            width: 60%; /* Adjust the width of the container as needed */
+            margin: 0 auto; /* Center-align the container horizontally */
+            text-align: left; /* Reset text alignment for form elements */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+	    
+        }
+label {
+    font-weight: bold; 
+}
+
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+    width: 60%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style checkboxes and radio buttons */
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px; 
+}
+
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #0056b3; 
+}

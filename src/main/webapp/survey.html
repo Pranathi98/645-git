@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Student Survey</h1>
+    <form > 
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+
+        <label for="streetAddress">Street Address:</label>
+        <input type="text" id="streetAddress" name="streetAddress" required><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required><br>
+
+        <label for="zip">ZIP:</label>
+        <input type="text" id="zip" name="zip" required pattern="[0-9]{5}" title="Please enter a valid ZIP code (5 digits)"><br>
+
+        <label for="telephone">Telephone Number:</label>
+        <input type="tel" id="telephone" name="telephone" required pattern="[0-9]+" title="Please enter a valid telephone number (numbers only)"><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="date">Date of Survey:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <p>What did you like most about the campus?</p>
+        <input type="checkbox" name="likes[]" value="students">Students
+        <input type="checkbox" name="likes[]" value="location">Location
+        <input type="checkbox" name="likes[]" value="campus">Campus
+        <input type="checkbox" name="likes[]" value="atmosphere">Atmosphere
+        <input type="checkbox" name="likes[]" value="dormRooms">Dorm Rooms
+        <input type="checkbox" name="likes[]" value="sports">Sports<br>
+
+        <p>How did you hear about us?</p>
+        <input type="radio" name="hearAbout" value="friends">Friends
+        <input type="radio" name="hearAbout" value="television">Television
+        <input type="radio" name="hearAbout" value="internet">Internet
+        <input type="radio" name="hearAbout" value="other">Other
+        <input type="text" id="otherText" name="otherText" placeholder="Please specify" style="display: none;"><br>
+
+        <label for="recommend">Likelihood of Recommending:</label>
+        <select id="recommend" name="recommend">
+            <option value="veryLikely">Very Likely</option>
+            <option value="likely">Likely</option>
+            <option value="unlikely">Unlikely</option>
+        </select><br>
+
+        <label for="raffle">Raffle Numbers (comma-separated, 1-100):</label>
+        <input type="text" id="raffle" name="raffle" required pattern="^(?:[1-9][0-9]?|100)(?:,[1-9][0-9]?|,100)*$"><br>
+
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="3"></textarea><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Cancel">
+    </form>
+
+    <script>
+       
+        const otherRadio = document.querySelector('input[name="hearAbout"][value="other"]');
+        const otherText = document.getElementById("otherText");
+
+        otherRadio.addEventListener("change", () => {
+            if (otherRadio.checked) {
+                otherText.style.display = "block";
+                otherText.required = true;
+            } else {
+                otherText.style.display = "none";
+                otherText.required = false;
+            }
+        });
+    </script>
+</body>
+</html>
