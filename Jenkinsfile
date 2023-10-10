@@ -1,8 +1,8 @@
 pipeline {
     environment {
         registry = "pranathi2207/swe645-ast1-image-new"
-        registryCredential = 'b4fdf1c1-14e9-405a-928c-8bf51e66d927'
-        DOCKERHUB_PASS = credentials('Dockerhub')
+        registryCredential = 'DockerHub'
+        DOCKERHUB_PASS = credentials('DockerHub')
         TIMESTAMP = new Date().format("yyyyMMdd_HHmmss")
     }
     agent any
