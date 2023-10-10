@@ -1,7 +1,7 @@
 pipeline {
     environment {
         registry = "pranathi2207/swe645-ast1-image-new"
-        registryCredential = 'Dockerhub'
+        registryCredential = 'b4fdf1c1-14e9-405a-928c-8bf51e66d927'
         DOCKERHUB_PASS = credentials('Dockerhub')
         TIMESTAMP = new Date().format("yyyyMMdd_HHmmss")
     }
