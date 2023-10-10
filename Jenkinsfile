@@ -22,7 +22,7 @@ pipeline {
 
 
 
-//                         sh "docker login -u Nagasumukh -p ${DOCKERHUB_PASS}"
+//                         sh "docker login -u pranathi2207 -p ${DOCKERHUB_PASS}"
 //                         def customImage = docker.build("pranathi2207/swe645-ast1-image-new:${env.TIMESTAMP}")
 
                    }
