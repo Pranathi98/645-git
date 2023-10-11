@@ -57,5 +57,15 @@ pipeline {
               }
            }
         }
+    stage('Deploy YAML Files') {
+        steps {
+        // Set the KUBECONFIG environment variable to your kubeconfig file path
+            env.KUBECONFIG = "/home/ubuntu/kubeconfig.yaml"
+        
+        // Deploy YAML files using kubectl apply
+            sh 'kubectl apply -f /home/ubuntu/yaml-files'
+    }
+}
+
     }
 }
