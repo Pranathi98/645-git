@@ -52,8 +52,8 @@ pipeline {
         stage('Deploying Rancher to Load Balancer') {
            steps {
               script{
-                  sh "kubectl set image deployment/hw2-nd container-0=pranathi2207/swe645-ast1-app:${env.TIMESTAMP}"
-//                  sh 'kubectl set image deployment/hw2-nd container-0=pranathi2207/swe645-ast1-app:${env.TIMESTAMP}'
+                  sh "kubectl set image deployment/hw2-lb container-0=pranathi2207/swe645-ast1-app:${env.TIMESTAMP}"
+//                  sh 'kubectl set image deployment/hw2-lb container-0=pranathi2207/swe645-ast1-app:${env.TIMESTAMP}'
               }
            }
         }
