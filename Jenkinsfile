@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "pranathi2207/swe645-ast1-app:20231014_230328"
+        registry = "pranathi2207/swe645-ast1-app"
         registryCredential = 'Dockerhub'
         DOCKERHUB_PASS = credentials('Dockerhub')
         TIMESTAMP = new Date().format("yyyyMMdd_HHmmss")
@@ -17,13 +17,13 @@ pipeline {
                         sh 'echo ${BUILD_TIMESTAMP}'
 
                         docker.withRegistry('',registryCredential){
-                            def customImage = docker.build("pranathi2207/swe645-ast1-app:20231014_230328:${env.TIMESTAMP}")
+                            def customImage = docker.build("pranathi2207/swe645-ast1-app:${env.TIMESTAMP}")
                         }
 
 
 
 //                         sh "docker login -u pranathi2207 -p ${DOCKERHUB_PASS}"
-//                         def customImage = docker.build("pranathi2207/swe645-ast1-app:20231014_230328:${env.TIMESTAMP}")
+//                         def customImage = docker.build("pranathi2207/swe645-ast1-app:${env.TIMESTAMP}")
 
                    }
                 }
@@ -33,9 +33,9 @@ pipeline {
                 steps {
                     script {
                         docker.withRegistry('',registryCredential){
-                          sh "docker push pranathi2207/swe645-ast1-app:20231014_230328:${env.TIMESTAMP}"
+                          sh "docker push pranathi2207/swe645-ast1-app:${env.TIMESTAMP}"
                        }
-//                         sh 'docker push pranathi2207/swe645-ast1-app:20231014_230328:${env.TIMESTAMP}'
+//                         sh 'docker push pranathi2207/swe645-ast1-app:${env.TIMESTAMP}'
                     }
                 }
             }
@@ -43,8 +43,8 @@ pipeline {
           stage('Deploying Rancher to single node') {
              steps {
                 script{
-                    sh "kubectl set image deployment/hw2-nd container-0=pranathi2207/swe645-ast1-app:20231014_230328:${env.TIMESTAMP}"
-//                    sh 'kubectl set image deployment/hw2-nd container-0=pranathi2207/swe645-ast1-app:20231014_230328:${env.TIMESTAMP}'
+                    sh "kubectl set image deployment/hw2-nd container-0=pranathi2207/swe645-ast1-app:${env.TIMESTAMP}"
+//                    sh 'kubectl set image deployment/hw2-nd container-0=pranathi2207/swe645-ast1-app:${env.TIMESTAMP}'
                 }
              }
           }
@@ -52,8 +52,8 @@ pipeline {
         stage('Deploying Rancher to Load Balancer') {
            steps {
               script{
-                  sh "kubectl set image deployment/hw2-lb container-0=pranathi2207/swe645-ast1-app:20231014_230328:${env.TIMESTAMP}"
-//                  sh 'kubectl set image deployment/hw2-lb container-0=pranathi2207/swe645-ast1-app:20231014_230328:${env.TIMESTAMP}'
+                  sh "kubectl set image deployment/hw2-lb container-0=pranathi2207/swe645-ast1-app:${env.TIMESTAMP}"
+//                  sh 'kubectl set image deployment/hw2-lb container-0=pranathi2207/swe645-ast1-app:${env.TIMESTAMP}'
               }
            }
         }
