@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "645-clus"
+  cluster:
+    server: "https://52.23.23.33/k8s/clusters/c-m-t2j5rs4d"
+    certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2VENDQ\
+      VdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKY\
+      kdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNV\
+      Fk1TmpnMgpNelkxTmpBZUZ3MHlNekV3TURreE5UQXdOVFphRncwek16RXdNRFl4TlRBd05UWmFNR\
+      Vl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV\
+      1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE5qazJPRFl6TmpVMk1Ga3dFd1lIS29aSXpqMENBU\
+      VlJS29aSXpqMERBUWNEUWdBRTZ3bVpseHl3TVQ4VQozb2t4Q0hlU0pMRUx4NzV6OWk4dlZWYkpTW\
+      GFmMjF1R2hVa2I1MzZsQ1FVYkhEdnozOEVnNnlnT3JuMXNaRDdJCmdQKzJnaytEcUtOQ01FQXdEZ\
+      1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGT\
+      TM1UFg3NCtWVENHajh3UTFzTzQ3Sno0d3dyTUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSVFESwpOV\
+      G9xSHY1SXllVXErRCs0a3NrUDdBczlNdWNmeVVZK293b0dsNnM0c0FJZ2NmQkpNc3Fsd3NXSmUzN\
+      Vk0SzFYClpOczJJcCtoWEhwMnVxRWlJNFNxL3RnPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t"
+
+users:
+- name: "645-clus"
+  user:
+    token: "kubeconfig-user-tnzdqgbhqk:54bgzxltl5x9fknwsf6cvj5xjmsl257r84j5jlrx6t276l856hg4t8"
+
+
+contexts:
+- name: "645-clus"
+  context:
+    user: "645-clus"
+    cluster: "645-clus"
+
+current-context: "645-clus"
